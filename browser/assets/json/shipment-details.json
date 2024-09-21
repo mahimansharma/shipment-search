@@ -1,0 +1,68 @@
+{
+    "Shipment": {
+      "AssignedToUserId": "amgr",
+      "Status": "Ready for Backroom Pick",
+      "DeliveryMethod": "PICK",
+      "ExpectedShipmentDate": "27-10-2018",
+      "OrderNo": "PICK1000001",
+      "ScacAndService": "",
+      "ShipmentKey": "PICK1000001_SHPKEY",
+      "ShipmentNo": "PICK1000001SHPNO",
+      "BillToAddress": {
+        "FirstName": "John",
+        "LastName": "Parks",
+        "EmailID": "john@example.com",
+        "Phonenumber": "1234567890",
+        "AddressLine1": "987, Broadview Avenue",
+        "AddressLine2": "",
+        "City": "Omaha",
+        "Country": "US",
+        "State": "NE",
+        "ZipCode": "68101",
+        "PersonInfoKey": "1000002"
+      },
+      "ToAddress": {
+        "FirstName": "Abby",
+        "LastName": "Doyle",
+        "EmailID": "adoyle@example.com",
+        "DayPhone": "6478390821",
+        "AddressLine1": "6849, Wolfe Road",
+        "AddressLine2": "123",
+        "City": "Sunnydale",
+        "Country": "US",
+        "State": "CA",
+        "ZipCode": "94049",
+        "PersonInfoKey": "100001"
+      },
+      "ShipmentLines": {
+        "TotalNumberOfRecords": "2",
+        "ShipmentLine": [
+          {
+            "Quantity": "2",
+            "ShipmentLineKey": "PICK100001SHPLINEKEY",
+            "OrderLine": {
+              "ItemDetails": {
+                "DisplayUnitOfMeasure": "Each",
+                "Description": "Frigidaire Window Air Conditioner 1200-BTU",
+                "ImageUrl": "/assets/img/ac.svg",
+                "ItemID": "100001"
+              }
+            }
+          },
+          {
+            "Quantity": "2",
+            "ShipmentLineKey": "PICK100002SHPLINEKEY",
+            "OrderLine": {
+              "ItemDetails": {
+                "DisplayUnitOfMeasure": "Each",
+                "Description": "Hunter Regalia 60-in New Bronze Ceiling Fan",
+                "ImageUrl": "/assets/img/fan.png",
+                "ItemID": "100002"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+  
