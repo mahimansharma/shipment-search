@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+// Global variables for breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 767px;
+$breakpoint-desktop: 1023px;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+// Base styles for container
+.container {
+  margin: 0 auto;
+  padding: 15px;
+
+  @media (max-width: $breakpoint-desktop) {
+    max-width: 1023px;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    max-width: 767px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    max-width: 480px;
+    padding: 10px;
+  }
+}
+
+// Shared button style
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}

@@ -1,0 +1,82 @@
+<div class="container results-container">
+  <div class="result-topbar">
+    <a class="navbar-brand" href="/">
+      <img style="width: 30px;" [src]='"/assets/img/back.svg"' alt="dsadsa" />
+    </a>
+    <h2 style="display: inline-block; margin-left: 20px;" >{{ 'shipment.RESULTS_TITLE' | translate }}</h2>
+
+  </div>
+
+  <div *ngIf="filteredShipments.length > 0" style="display: flow-root; margin-left: 1%;">
+    <div> <span style="font-size: 30px;">{{filteredShipments.length}} </span> results</div>
+    <!-- Filter Icon with a tick mark if any filter is applied -->
+      <!-- Filter Icon with a tick mark if any filter is applied -->
+    <div class="filter-icon-container">
+      <div class="filter-icon" (click)="toggleFilterPopover()">
+        <i class="fas fa-filter"></i>
+        <img class="filter-tick" [src]='"/assets/img/filter.png"' alt="dsadsa" />
+      </div>
+
+      <!-- Filter Popover -->
+      <div class="filter-popover" *ngIf="showFilterPopover">
+        <div class="filter-popover-header">
+          <span>{{ 'shipment.FILTER_BY_STATUS' | translate }}</span>
+          <i class="fas fa-times close-icon" (click)="closeFilterPopover()"></i>
+        </div>
+
+        <ul>
+          <li *ngFor="let status of availableStatuses">
+            <input type="checkbox" [checked]="temporaryStatuses.includes(status)" (click)="toggleStatus(status)">
+            <label>{{ status }}</label>
+          </li>
+        </ul>
+
+        <div class="filter-popover-footer">
+          <button class="btn btn-secondary" (click)="resetStatusFilter()">{{ 'shipment.RESET_FILTER' | translate }}</button>
+          <button class="btn btn-primary" (click)="applyStatusFilter()">{{ 'shipment.APPLY_FILTER' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- List of Shipments -->
+   <div>
+     <div *ngFor="let shipment of filteredShipments" class="shipment-item" >
+       <!-- Shipment Details Table -->
+       <div class="details-grid">
+         <!-- First Column -->
+         <div class="details-column">
+           <p>{{ shipment.OrderNo }}</p>
+           <p>{{ shipment.ShipmentLines.TotalNumberOfRecords }} products</p>
+           <p><strong>Carrier:</strong> {{ shipment.ScacAndService }}</p>
+           <p  class="clickable" (click)="viewDetails(shipment.ShipmentNo)"><strong>Shipment #:</strong> <span>{{ shipment.ShipmentNo }}</span> </p>
+         </div>
+         
+         <!-- Second Column -->
+         <div class="details-column">
+           <p class="status">{{ shipment.Status }}</p>
+           <p><strong>Assigned to:</strong> {{ shipment.AssignedToUserId }}</p>
+           <p><strong>{{ shipment.DeliveryMethod == "SHP" ? "Expected Shipment date" : "Expected Pickup date"}}</strong> {{parseDate(shipment.ExpectedShipmentDate) || shipment.ExpectedShipmentDate}}</p>
+         </div>
+         
+         <!-- Third Column (moves under first column on mobile) -->
+         <div class="details-column">
+           <p><strong> Customer Info:</strong></p>
+           <br>
+           <p>{{ shipment.BillToAddress.FirstName }} {{ shipment.BillToAddress.LastName }}</p>
+           <p> {{ shipment.BillToAddress.DayPhone }}</p>
+           <p>{{ shipment.BillToAddress.EMailID }}</p>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div *ngIf="filteredShipments.length === 0">
+    No result Found
+   </div>
+
+  <!-- Loading more message -->
+  <div *ngIf="isLoading">
+    <p>{{ 'shipment.LOADING_MORE' | translate }}</p>
+  </div>
+</div>

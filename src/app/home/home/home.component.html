@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>{{ 'home.LABEL_WhatDoYouWantToDO' | translate }}</h1>
+  <div class="home" >
+    <form style="margin: auto;" [formGroup]="searchForm">
+      <h1 style="text-align: center;">{{ 'home.LABEL_shipmentSearch' | translate }}</h1>
+
+      <div class="form-group mb-3">
+        <input id="orderNo" type="text" class="form-control" formControlName="orderNo" name="orderNo" placeholder="{{'home.LABEL_OrderNo' | translate}}">
+      </div>
+
+      <div class="form-group mb-3">
+        <input id="shipmentNo" type="text" class="form-control" formControlName="shipmentNo" name="shipmentNo" placeholder="{{'home.LABEL_ShipmentNo' | translate}}">
+      </div>
+
+      <div class="form-group mb-3">
+        <input id="firstName" type="text" class="form-control" formControlName="firstName" name="firstName" placeholder="{{'home.LABEL_FirstName' | translate}}">
+      </div>
+
+      <div class="form-group mb-3">
+        <input id="lastName" type="text" class="form-control" formControlName="lastName" name="lastName" placeholder="{{'home.LABEL_LastName' | translate}}">
+      </div>
+
+      <div class="form-group mb-3">
+        <input id="email" type="email" class="form-control" formControlName="email" name="email" placeholder="{{'home.LABEL_Email' | translate}}">
+        <div *ngIf="formControl?.email?.invalid && formControl?.email?.touched" class="text-danger">
+          <span *ngIf="formControl?.email?.errors?.['email']">{{ 'home.ERROR_InvalidEmail' | translate }}</span>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <input id="phoneNumber" type="text" class="form-control" formControlName="phoneNumber" name="LABEL_PhoneNumber" placeholder="{{'home.LABEL_PhoneNumber' | translate}}">
+        <div *ngIf="formControl?.phoneNumber?.invalid && formControl?.phoneNumber?.touched" class="text-danger">
+          <span *ngIf="formControl?.phoneNumber?.errors?.['pattern']">{{ 'home.ERROR_InvalidPhoneNumber' | translate }}</span>
+        </div>
+      </div>
+  
+      <div class="button-container">
+        <button type="submit" class="btn btn-secondary" (click)="onReset()" >{{ 'home.RESET' | translate }}</button>
+        <button type="submit" class="btn btn-primary" (click)="onSubmit()" >{{ 'home.BUTTON_Search' | translate }}</button>
+      </div>
+    </form>
+
+
+
+
+  </div>
+</div>

@@ -1,0 +1,216 @@
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 767px;
+$breakpoint-desktop: 1023px;
+
+
+.container {
+    padding-top: 20px;
+  
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+  
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+    }
+  
+    // Shipment item styles
+    .shipment-item {
+      padding: 0 15px 15px 15px;
+      border-bottom: 1px solid #ddd;
+      h3 {
+        font-size: 1.5rem;
+        color: #007bff;
+        margin-bottom: 5px;
+  
+        @media (max-width: $breakpoint-mobile) {
+          font-size: 1.2rem;
+        }
+      }
+  
+      p {
+        font-size: 1rem;
+        color: #555;
+  
+        @media (max-width: $breakpoint-mobile) {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  
+    // Infinite scroll loader text
+    div[infiniteScroll] {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      text-align: center;
+  
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+
+
+
+  //////////////////////////////
+
+  .filter-icon-container {
+    position: relative; /* Fix the position to keep it floating */
+    top: -30px; /* You can adjust this depending on your layout */
+    right: 20px; /* Ensure it's on the right */
+    z-index: 1000;
+    float: right;
+  }
+  
+  // Styling for the filter icon
+  .filter-icon {
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: #333;
+  
+    .filter-tick {
+      font-size: 1rem;
+      color: green;
+      margin-left: 5px;
+      width: 20px;
+    }
+  
+    &:hover {
+      color: #007bff;
+    }
+  }
+  
+  // Filter popover styling (relative to filter icon)
+  .filter-popover {
+    position: absolute;
+    top: 50px; /* Adjust so it appears right under the filter icon */
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    z-index: 9999; /* Ensure it appears above other elements */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+    width: 250px;
+    .filter-popover-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+  
+      .close-icon {
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+    }
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+  
+      li {
+        display: flex;
+        align-items: center;
+        padding: 5px 0;
+  
+        input {
+          margin-right: 10px;
+        }
+  
+        label {
+          font-size: 1rem;
+        }
+      }
+    }
+  
+    .filter-popover-footer {
+      margin-top: 10px;
+      float: right;
+      .btn {
+        padding: 5px 10px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+//////////////////////////////////
+
+ // Styling for the filter icon
+
+
+// Filter popover styling
+
+
+.btn-secondary{
+  border-color: #007bff;
+  background-color: white;
+  color: #007bff;
+  border-style: solid;
+  border-width: thin;
+  margin-right: 10px;
+}
+
+.clickable {
+  cursor: pointer;
+  span {
+    color: #007bff !important;
+  }
+}
+
+.status{
+  color: rgb(122, 1, 122) !important;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin-top: 10px;
+  
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(2, 1fr); // Two columns on tablet
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr; // Single column on mobile
+  }
+}
+
+.details-column {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+  p {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 0.9rem;
+
+    strong {
+      font-weight: bold;
+    }
+  }
+}
+
+.results-container{
+  background-color: white;
+}
+
+.result-topbar{
+  border-bottom: 1px solid black;
+}
+
+// Mobile reflow for third column under first column
+@media (max-width: 480px) {
+  .details-column:nth-child(3) {
+    grid-column: 1; // Move the third column under the first
+  }
+}

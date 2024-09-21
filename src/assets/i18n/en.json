@@ -1,0 +1,31 @@
+{
+  "home": {
+    "home":"Home",
+    "LABEL_WhatDoYouWantToDO": "What do you want to do?",
+    "LABEL_shipmentSearch": "Shipment Search",
+    "LABEL_OrderNo": "Order Number",
+    "LABEL_ShipmentNo": "Shipment Number",
+    "LABEL_FirstName": "First Name",
+    "LABEL_LastName": "Last Name",
+    "LABEL_Email": "Email",
+    "LABEL_PhoneNumber": "Phone Number",
+    "BUTTON_Search": "Search",
+    "RESET": "Reset",
+    "ERROR_InvalidEmail":"Please enter valid email id",
+    "ERROR_InvalidPhoneNumber":"Please enter valid phone number",
+    "Home": "Home"
+  },
+  "shipment": {
+    "RESULTS_TITLE": "Shipment Search Results",
+    "LOADING_MORE": "Loading more shipments...",
+    "BILL_TO": "Bill To",
+    "SHIP_TO": "Ship To",
+    "BUTTON_BACK": "Back",
+    "DETAILS_TITLE":"Shipment Summary",
+    "FILTER_BY_STATUS": "Filter by Status",
+      "APPLY_FILTER":"Apply",
+      "RESET_FILTER":"Reset"
+  }
+
+  
+}

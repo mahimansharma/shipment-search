@@ -1,0 +1,285 @@
+{
+    "Shipments": {
+      "TotalNumberOfRecords": "2",
+      "Shipment": [
+        {
+          "AssignedToUserId": "abrooks",
+          "DeliveryMethod": "SHP",
+          "ExpectedShipmentDate": "27-10-2017",
+          "OrderNo": "SFS1000001",
+          "ScacAndService": "UPSNGround",
+          "ShipNode": "Mtrx_Store_1",
+          "ShipmentKey": "SFS1000001_SHPKEY",
+          "ShipmentNo": "SFS1000001SHPNO",
+          "Status": "Cancelled",
+          "BillToAddress": {
+            "DayPhone": "123456789",
+            "EMailID": "Zymer@org.com",
+            "FirstName": "Ben",
+            "LastName": "Zymer",
+            "PersonInfoKey": "1000001"
+          },
+          "ShipmentLines": {
+            "TotalNumberOfRecords": "4"
+          }
+        },
+        {
+          "AssignedToUserId": "amgr",
+          "DeliveryMethod": "PICK",
+          "ExpectedShipmentDate": "28-10-2017",
+          "OrderNo": "PICK1000001",
+          "ScacAndService": "",
+          "ShipNode": "Mtrx_Store_1",
+          "ShipmentKey": "PICK1000001_SHPKEY",
+          "ShipmentNo": "PICK1000001SHPNO",
+          "Status": "Ready for Backroom Pick",
+          "BillToAddress": {
+            "DayPhone": "1234567890",
+            "EMailID": "adoyle@org.com",
+            "FirstName": "Abby",
+            "LastName": "Doyle",
+            "PersonInfoKey": "2000001"
+          },
+          "ShipmentLines": {
+            "TotalNumberOfRecords": "6"
+          }
+        },
+
+        {
+          "AssignedToUserId": "abrooks",
+          "DeliveryMethod": "SHP",
+          "ExpectedShipmentDate": "27-10-2017",
+          "OrderNo": "SFS1000003",
+          "ScacAndService": "UPSNGround",
+          "ShipNode": "Mtrx_Store_1",
+          "ShipmentKey": "SFS1000001_SHPKEY",
+          "ShipmentNo": "SFS1000001SHPNO",
+          "Status": "Cancelled",
+          "BillToAddress": {
+            "DayPhone": "123456789",
+            "EMailID": "Zymer@org.com",
+            "FirstName": "Ben",
+            "LastName": "Zymer",
+            "PersonInfoKey": "1000001"
+          },
+          "ShipmentLines": {
+            "TotalNumberOfRecords": "4"
+          }
+        },
+        {
+          "AssignedToUserId": "abrooks",
+          "DeliveryMethod": "SHP",
+          "ExpectedShipmentDate": "27-10-2017",
+          "OrderNo": "SFS1000004",
+          "ScacAndService": "UPSNGround",
+          "ShipNode": "Mtrx_Store_1",
+          "ShipmentKey": "SFS1000001_SHPKEY",
+          "ShipmentNo": "SFS1000001SHPNO",
+          "Status": "Cancelled",
+          "BillToAddress": {
+            "DayPhone": "123456789",
+            "EMailID": "Zymer@org.com",
+            "FirstName": "Ben",
+            "LastName": "Zymer",
+            "PersonInfoKey": "1000001"
+          },
+          "ShipmentLines": {
+            "TotalNumberOfRecords": "4"
+          }
+        },
+        {
+          "AssignedToUserId": "abrooks",
+          "DeliveryMethod": "SHP",
+          "ExpectedShipmentDate": "27-10-2017",
+          "OrderNo": "SFS1000005",
+          "ScacAndService": "UPSNGround",
+          "ShipNode": "Mtrx_Store_1",
+          "ShipmentKey": "SFS1000001_SHPKEY",
+          "ShipmentNo": "SFS1000001SHPNO",
+          "Status": "Packed",
+          "BillToAddress": {
+            "DayPhone": "123456789",
+            "EMailID": "Zymer@org.com",
+            "FirstName": "Ben",
+            "LastName": "Zymer",
+            "PersonInfoKey": "1000001"
+          },
+          "ShipmentLines": {
+            "TotalNumberOfRecords": "4"
+          }
+        },
+        {
+          "AssignedToUserId": "abrooks",
+          "DeliveryMethod": "SHP",
+          "ExpectedShipmentDate": "27-10-2017",
+          "OrderNo": "SFS1000006",
+          "ScacAndService": "UPSNGround",
+          "ShipNode": "Mtrx_Store_1",
+          "ShipmentKey": "SFS1000001_SHPKEY",
+          "ShipmentNo": "SFS1000001SHPNO",
+          "Status": "Ready for Packing",
+          "BillToAddress": {
+            "DayPhone": "123456789",
+            "EMailID": "Zymer@org.com",
+            "FirstName": "Ben",
+            "LastName": "Zymer",
+            "PersonInfoKey": "1000001"
+          },
+          "ShipmentLines": {
+            "TotalNumberOfRecords": "4"
+          }
+        },
+        {
+          "AssignedToUserId": "abrooks",
+          "DeliveryMethod": "SHP",
+          "ExpectedShipmentDate": "27-10-2017",
+          "OrderNo": "SFS1000007",
+          "ScacAndService": "UPSNGround",
+          "ShipNode": "Mtrx_Store_1",
+          "ShipmentKey": "SFS1000001_SHPKEY",
+          "ShipmentNo": "SFS1000001SHPNO",
+          "Status": "Backroom pickup in progress",
+          "BillToAddress": {
+            "DayPhone": "123456789",
+            "EMailID": "Zymer@org.com",
+            "FirstName": "Ben",
+            "LastName": "Zymer",
+            "PersonInfoKey": "1000001"
+          },
+          "ShipmentLines": {
+            "TotalNumberOfRecords": "4"
+          }
+        },
+        {
+          "AssignedToUserId": "abrooks",
+          "DeliveryMethod": "SHP",
+          "ExpectedShipmentDate": "27-10-2017",
+          "OrderNo": "SFS1000008",
+          "ScacAndService": "UPSNGround",
+          "ShipNode": "Mtrx_Store_1",
+          "ShipmentKey": "SFS1000001_SHPKEY",
+          "ShipmentNo": "SFS1000001SHPNO",
+          "Status": "Shipped/Packed",
+          "BillToAddress": {
+            "DayPhone": "123456789",
+            "EMailID": "Zymer@org.com",
+            "FirstName": "Ben",
+            "LastName": "Zymer",
+            "PersonInfoKey": "1000001"
+          },
+          "ShipmentLines": {
+            "TotalNumberOfRecords": "4"
+          }
+        },
+        {
+          "AssignedToUserId": "abrooks",
+          "DeliveryMethod": "SHP",
+          "ExpectedShipmentDate": "27-10-2017",
+          "OrderNo": "SFS1000009",
+          "ScacAndService": "UPSNGround",
+          "ShipNode": "Mtrx_Store_1",
+          "ShipmentKey": "SFS1000001_SHPKEY",
+          "ShipmentNo": "SFS1000001SHPNO",
+          "Status": "Ready for Customer Pickup",
+          "BillToAddress": {
+            "DayPhone": "123456789",
+            "EMailID": "Zymer@org.com",
+            "FirstName": "Ben",
+            "LastName": "Zymer",
+            "PersonInfoKey": "1000001"
+          },
+          "ShipmentLines": {
+            "TotalNumberOfRecords": "4"
+          }
+        },
+        {
+          "AssignedToUserId": "abrooks",
+          "DeliveryMethod": "SHP",
+          "ExpectedShipmentDate": "27-10-2017",
+          "OrderNo": "SFS1000010",
+          "ScacAndService": "UPSNGround",
+          "ShipNode": "Mtrx_Store_1",
+          "ShipmentKey": "SFS1000001_SHPKEY",
+          "ShipmentNo": "SFS1000001SHPNO",
+          "Status": "Packing in progress",
+          "BillToAddress": {
+            "DayPhone": "123456789",
+            "EMailID": "Zymer@org.com",
+            "FirstName": "Ben",
+            "LastName": "Zymer",
+            "PersonInfoKey": "1000001"
+          },
+          "ShipmentLines": {
+            "TotalNumberOfRecords": "4"
+          }
+        },
+        {
+          "AssignedToUserId": "abrooks",
+          "DeliveryMethod": "SHP",
+          "ExpectedShipmentDate": "27-10-2017",
+          "OrderNo": "SFS1000011",
+          "ScacAndService": "UPSNGround",
+          "ShipNode": "Mtrx_Store_1",
+          "ShipmentKey": "SFS1000001_SHPKEY",
+          "ShipmentNo": "SFS1000001SHPNO",
+          "Status": "Cancelled",
+          "BillToAddress": {
+            "DayPhone": "123456789",
+            "EMailID": "Zymer@org.com",
+            "FirstName": "Ben",
+            "LastName": "Zymer",
+            "PersonInfoKey": "1000001"
+          },
+          "ShipmentLines": {
+            "TotalNumberOfRecords": "4"
+          }
+        },
+        {
+          "AssignedToUserId": "abrooks",
+          "DeliveryMethod": "SHP",
+          "ExpectedShipmentDate": "27-10-2017",
+          "OrderNo": "SFS1000012",
+          "ScacAndService": "UPSNGround",
+          "ShipNode": "Mtrx_Store_1",
+          "ShipmentKey": "SFS1000001_SHPKEY",
+          "ShipmentNo": "SFS1000001SHPNO",
+          "Status": "Cancelled",
+          "BillToAddress": {
+            "DayPhone": "123456789",
+            "EMailID": "Zymer@org.com",
+            "FirstName": "Ben",
+            "LastName": "Zymer",
+            "PersonInfoKey": "1000001"
+          },
+          "ShipmentLines": {
+            "TotalNumberOfRecords": "4"
+          }
+        },
+        {
+          "AssignedToUserId": "abrooks",
+          "DeliveryMethod": "SHP",
+          "ExpectedShipmentDate": "27-10-2017",
+          "OrderNo": "SFS1000013",
+          "ScacAndService": "UPSNGround",
+          "ShipNode": "Mtrx_Store_1",
+          "ShipmentKey": "SFS1000001_SHPKEY",
+          "ShipmentNo": "SFS1000001SHPNO",
+          "Status": "Cancelled",
+          "BillToAddress": {
+            "DayPhone": "123456789",
+            "EMailID": "Zymer@org.com",
+            "FirstName": "Ben",
+            "LastName": "Zymer",
+            "PersonInfoKey": "1000001"
+          },
+          "ShipmentLines": {
+            "TotalNumberOfRecords": "4"
+          }
+        }
+
+
+
+      ]
+    }
+  }
+  

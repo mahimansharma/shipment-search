@@ -1,0 +1,33 @@
+.app-header {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  
+    .navbar-brand {
+      font-size: 1.5rem;
+      color: #007bff;
+  
+      &:hover {
+        color: #0056b3;
+      }
+    }
+  }
+  
+  .app-footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+  
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  }
+  
+  main.container {
+    margin-top: 20px;
+    min-height: 80vh;
+  }
+  

@@ -1,0 +1,169 @@
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 767px;
+$breakpoint-desktop: 1023px;
+
+// Container for details page
+.container {
+    padding-top: 20px;
+  
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+  
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 1.5rem;
+      }
+    }
+  
+    // Bill to/Ship to section
+    h3 {
+      font-size: 1.5rem;
+      color: #007bff;
+      margin-top: 20px;
+      margin-bottom: 10px;
+  
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 1.2rem;
+      }
+    }
+  
+    p {
+      font-size: 1rem;
+      color: #555;
+  
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 0.9rem;
+      }
+    }
+  
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      font-size: 1.2rem;
+  
+      //@media (max-width: $breakpoint-mobile) {
+       // font-size: 1rem;
+      //}
+    }
+  }
+
+  .shipment-container {
+    margin: auto;
+    padding: 10px;
+    background-color: white;
+    /* Grid for Shipment Summary */
+    .shipment-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+      
+      .grid-item {
+        background-color: #f9f9f9;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+  
+    /* Toggle Button */
+    .toggle-btn {
+      float: right;
+      color:  #007bff;
+      cursor: pointer;
+    }
+  
+    /* Additional Shipment Info Grid */
+    .additional-info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+  
+      .grid-item {
+        background-color: #e8f4ff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+  
+    /* Products Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+  
+      .product-card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        padding: 15px;
+        
+        img {
+          width: 100px;
+          height: auto;
+          margin-bottom: 10px;
+          max-width: 100px;
+          float: left;
+        }
+  
+        .product-details {
+          float:right;
+          text-align: left;
+          p {
+            margin: 5px 0;
+          }
+        }
+      }
+    }
+  }
+  
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+    background-color: #f8f9fa;
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr); // Two columns on tablet
+    }
+  
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr; // Single column on mobile
+    }
+  }
+  
+  .details-column {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  
+    p {
+      margin: 0;
+      padding: 5px 0;
+      font-size: 0.9rem;
+  
+      strong {
+        font-weight: bold;
+      }
+    }
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .shipment-summary-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .additional-info-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  
