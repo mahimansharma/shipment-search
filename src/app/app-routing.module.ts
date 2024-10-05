@@ -10,7 +10,7 @@ const routes: Routes = [
     path: 'shipment',
     loadChildren: () => import('./shipment/shipment.module').then(m => m.ShipmentModule),
   },
-  { path: '**', redirectTo: '' },  // Default route
+  { path: '**', redirectTo: './notfound' },  // Default route
 ];
 
 @NgModule({

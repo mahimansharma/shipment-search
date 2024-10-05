@@ -1,19 +1,28 @@
 {
   "home": {
-    "home":"Home",
-    "LABEL_WhatDoYouWantToDO": "What do you want to do?",
-    "LABEL_shipmentSearch": "Shipment Search",
-    "LABEL_OrderNo": "Order Number",
-    "LABEL_ShipmentNo": "Shipment Number",
-    "LABEL_FirstName": "First Name",
-    "LABEL_LastName": "Last Name",
-    "LABEL_Email": "Email",
-    "LABEL_PhoneNumber": "Phone Number",
-    "BUTTON_Search": "Search",
-    "RESET": "Reset",
-    "ERROR_InvalidEmail":"Please enter valid email id",
-    "ERROR_InvalidPhoneNumber":"Please enter valid phone number",
-    "Home": "Home"
+
+    "text1": "IBM Store Engagement",
+    "text2":"Store Associate",
+    "footer":"2024 Shipment Search Application"
+  },
+  "search":{
+    "label":{
+      "home":"Home",
+      "LABEL_WhatDoYouWantToDO": "What do you want to do?",
+      "LABEL_shipmentSearch": "Shipment Search",
+      "LABEL_OrderNo": "Order Number",
+      "LABEL_ShipmentNo": "Shipment Number",
+      "LABEL_FirstName": "First Name",
+      "LABEL_LastName": "Last Name",
+      "LABEL_Email": "Email",
+      "LABEL_PhoneNumber": "Phone Number",
+      "BUTTON_Search": "Search",
+      "RESET": "Reset"
+    },
+    "error_message":{
+      "ERROR_InvalidEmail":"Please enter valid email id",
+      "ERROR_InvalidPhoneNumber":"Please enter valid phone number"
+    }
   },
   "shipment": {
     "RESULTS_TITLE": "Shipment Search Results",
@@ -21,11 +30,21 @@
     "BILL_TO": "Bill To",
     "SHIP_TO": "Ship To",
     "BUTTON_BACK": "Back",
-    "DETAILS_TITLE":"Shipment Summary",
     "FILTER_BY_STATUS": "Filter by Status",
-      "APPLY_FILTER":"Apply",
-      "RESET_FILTER":"Reset"
+    "APPLY_FILTER":"Apply",
+    "RESET_FILTER":"Reset",
+    "NO_RESULT":" No result Found"
+  },
+  "shipment_details":{
+    "DETAILS_TITLE":"Shipment Summary",
+    "NO_RESULT":"No Result For Shipment No:",
+    "CARRIER":"Carrier:",
+    "ASSIGNED_TO":"Assigned to:",
+    "CUSTOMER_INFO":"Customer Info:",
+    "SHIP_TO":"Ship to:",
+    "BILL_TO":"Bill to:",
+    "PRODUCTS":"Products",
+    "PRODUCT_ID":"Product Id:",
+    "QUANTITY":"Quantity:"
   }
-
-  
 }

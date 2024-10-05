@@ -8,16 +8,13 @@
   </div>
 
   <div *ngIf="filteredShipments.length > 0" style="display: flow-root; margin-left: 1%;">
-    <div> <span style="font-size: 30px;">{{filteredShipments.length}} </span> results</div>
-    <!-- Filter Icon with a tick mark if any filter is applied -->
-      <!-- Filter Icon with a tick mark if any filter is applied -->
+    <div> <span style="font-size: 30px;">{{totalResults}} </span> results</div>
     <div class="filter-icon-container">
       <div class="filter-icon" (click)="toggleFilterPopover()">
         <i class="fas fa-filter"></i>
         <img class="filter-tick" [src]='"/assets/img/filter.png"' alt="dsadsa" />
       </div>
-
-      <!-- Filter Popover -->
+      <!-- Filter  -->
       <div class="filter-popover" *ngIf="showFilterPopover">
         <div class="filter-popover-header">
           <span>{{ 'shipment.FILTER_BY_STATUS' | translate }}</span>
@@ -39,12 +36,9 @@
     </div>
   </div>
 
-  <!-- List of Shipments -->
    <div>
      <div *ngFor="let shipment of filteredShipments" class="shipment-item" >
-       <!-- Shipment Details Table -->
        <div class="details-grid">
-         <!-- First Column -->
          <div class="details-column">
            <p>{{ shipment.OrderNo }}</p>
            <p>{{ shipment.ShipmentLines.TotalNumberOfRecords }} products</p>
@@ -52,14 +46,12 @@
            <p  class="clickable" (click)="viewDetails(shipment.ShipmentNo)"><strong>Shipment #:</strong> <span>{{ shipment.ShipmentNo }}</span> </p>
          </div>
          
-         <!-- Second Column -->
          <div class="details-column">
            <p class="status">{{ shipment.Status }}</p>
            <p><strong>Assigned to:</strong> {{ shipment.AssignedToUserId }}</p>
            <p><strong>{{ shipment.DeliveryMethod == "SHP" ? "Expected Shipment date" : "Expected Pickup date"}}</strong> {{parseDate(shipment.ExpectedShipmentDate) || shipment.ExpectedShipmentDate}}</p>
          </div>
          
-         <!-- Third Column (moves under first column on mobile) -->
          <div class="details-column">
            <p><strong> Customer Info:</strong></p>
            <br>
@@ -72,10 +64,9 @@
    </div>
 
    <div *ngIf="filteredShipments.length === 0">
-    No result Found
+    {{ 'shipment.NO_RESULT' | translate }}
    </div>
 
-  <!-- Loading more message -->
   <div *ngIf="isLoading">
     <p>{{ 'shipment.LOADING_MORE' | translate }}</p>
   </div>

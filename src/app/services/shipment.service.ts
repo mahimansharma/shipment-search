@@ -11,7 +11,13 @@ export class ShipmentService {
 
   getShipmentDetails(shipmentNo: string) {
     return this.http.get('/assets/json/shipment-list.json').pipe(
-      map((data:any) => data.Shipments?.Shipment?.find((val: { ShipmentNo: any; }) => val.ShipmentNo))
+      map((data:any) => data.Shipments?.Shipment?.find((val:any) => val.ShipmentNo === shipmentNo))
+    );
+  }
+
+  getShipmentDetailsList(shipmentNo: string) {
+    return this.http.get('/assets/json/shipment-details.json').pipe(
+      map((data:any) => data.Shipment.find((val:any) => val.ShipmentNo === shipmentNo))
     );
   }
 }

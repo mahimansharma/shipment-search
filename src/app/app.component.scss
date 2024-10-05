@@ -5,12 +5,27 @@
   
     .navbar-brand {
       font-size: 1.5rem;
-      color: #007bff;
-  
+      color: white;
+      text-decoration: none;
+      
+    }
+
+    .header-text{
+      color: white;
+      font-weight: bold;
+      padding: 5px;
       &:hover {
-        color: #0056b3;
+        color: #787878;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 15px;
       }
     }
+  }
+
+  a {
+    text-decoration: none !important;
   }
   
   .app-footer {

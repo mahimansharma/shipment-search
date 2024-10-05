@@ -1,29 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, viewChild, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import * as _ from 'lodash';
 import { ShipmentService } from '../../services/shipment.service';
 import { DatePipe } from '@angular/common';
+import { debounce } from 'lodash';
 
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.scss'],
-  providers: [DatePipe]
+  providers: [DatePipe],
 })
-export class ResultsComponent implements OnInit {
+export class ResultsComponent implements OnInit, OnDestroy {
   shipments: any[] = [];
   filteredShipments: any[] = [];
   queryParams: any = {};
   page = 1;
   perPage = 10;
   isLoading = false;
-
+  
   showFilterPopover = false; 
   selectedStatuses: string[] = [];
-  availableStatuses: string[] = []
+  availableStatuses: string[] = [];
   temporaryStatuses: string[] = [];
-  ImagePath: string = '/assets/img/filter.png';
+  totalResults = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -34,16 +34,14 @@ export class ResultsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.ImagePath = '/assets/img/filter.png'
-
     this.route.queryParams.subscribe(params => {
       this.queryParams = params;
       this.loadShipments();
     });
 
-    window.addEventListener('scroll', this.onScroll.bind(this));
+    const handleScroll = debounce(this.onScroll.bind(this), 200);
+    window.addEventListener('scroll', handleScroll);
   }
-
   parseDate(dateString:any) {
     const [day, month, year] = dateString.split('-').map(Number);
     const parseDate = new Date(year, month - 1, day);
@@ -54,7 +52,7 @@ export class ResultsComponent implements OnInit {
     this.isLoading = true;
     this.http.get('/assets/json/shipment-list.json').subscribe((data: any) => {
       this.shipments = data.Shipments.Shipment;
-      this.availableStatuses = [...new Set(this.shipments.map(val => val.Status))]
+      this.availableStatuses = [...new Set(this.shipments.map(val => val.Status))];
       this.applyFilters();
       this.isLoading = false;
     });
@@ -73,6 +71,7 @@ export class ResultsComponent implements OnInit {
              matchesStatuses;
     });
 
+    this.totalResults = this.filteredShipments.length;
     this.filteredShipments = this.filteredShipments.slice(0, this.page * this.perPage);
   }
 
@@ -87,7 +86,6 @@ export class ResultsComponent implements OnInit {
     this.router.navigate(['/shipment/details', shipmentNo]);
   }
 
-  // Listen to scroll event
   onScroll(): void {
     const scrollPosition = window.innerHeight + window.scrollY;
     const threshold = document.body.offsetHeight - 2;
@@ -96,7 +94,6 @@ export class ResultsComponent implements OnInit {
       this.loadMoreShipments();
     }
   }
-
 
   toggleFilterPopover() {
     this.showFilterPopover = !this.showFilterPopover;
@@ -111,13 +108,11 @@ export class ResultsComponent implements OnInit {
     }
   }
 
- 
   applyStatusFilter() {
     this.selectedStatuses = [...this.temporaryStatuses]; 
     this.showFilterPopover = false;
     this.applyFilters();
   }
-
 
   resetStatusFilter() {
     this.temporaryStatuses = []; 

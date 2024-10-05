@@ -2,7 +2,6 @@ $breakpoint-mobile: 480px;
 $breakpoint-tablet: 767px;
 $breakpoint-desktop: 1023px;
 
-// Container for details page
 .container {
     padding-top: 20px;
   
@@ -15,7 +14,6 @@ $breakpoint-desktop: 1023px;
       }
     }
   
-    // Bill to/Ship to section
     h3 {
       font-size: 1.5rem;
       color: #007bff;
@@ -48,11 +46,24 @@ $breakpoint-desktop: 1023px;
     }
   }
 
+  .no-shipment{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10%;
+
+    @media (max-width: $breakpoint-mobile) {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20%;
+    }
+  }
+
   .shipment-container {
     margin: auto;
     padding: 10px;
     background-color: white;
-    /* Grid for Shipment Summary */
     .shipment-summary-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -68,14 +79,12 @@ $breakpoint-desktop: 1023px;
       }
     }
   
-    /* Toggle Button */
     .toggle-btn {
       float: right;
       color:  #007bff;
       cursor: pointer;
     }
   
-    /* Additional Shipment Info Grid */
     .additional-info-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -90,7 +99,6 @@ $breakpoint-desktop: 1023px;
       }
     }
   
-    /* Products Grid */
     .products-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -130,11 +138,11 @@ $breakpoint-desktop: 1023px;
     margin-top: 10px;
     background-color: #f8f9fa;
     @media (max-width: 767px) {
-      grid-template-columns: repeat(2, 1fr); // Two columns on tablet
+      grid-template-columns: repeat(2, 1fr); 
     }
   
     @media (max-width: 480px) {
-      grid-template-columns: 1fr; // Single column on mobile
+      grid-template-columns: 1fr;
     }
   }
   
@@ -155,7 +163,6 @@ $breakpoint-desktop: 1023px;
     }
   }
   
-  /* Responsive Styles */
   @media (max-width: 768px) {
     .shipment-summary-grid {
       grid-template-columns: 1fr;

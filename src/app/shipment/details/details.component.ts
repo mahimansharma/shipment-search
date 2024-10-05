@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ShipmentService } from '../../services/shipment.service';
 import { DatePipe } from '@angular/common';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-details',
@@ -39,16 +40,47 @@ export class DetailsComponent implements OnInit {
   }
 
   loadShipmentDetails() {
-    this.http.get('/assets/json/shipment-details.json').subscribe((data: any) => {
-      // Find the shipment matching the ID in the mock data
-      this.shipment = data.Shipment;
-    });
 
-    this.shipmentService.getShipmentDetails(this.shipmentNo).subscribe(data => {
-      this.shipment_list_data = data
-      console.log(data)
-    })
+    forkJoin([
+      this.shipmentService.getShipmentDetailsList(this.shipmentNo),
+      this.shipmentService.getShipmentDetails(this.shipmentNo)
+    ]).subscribe(
+      ([shipmentDetailsList, shipmentDetails]) => {
+        this.shipment = shipmentDetailsList;
+        this.shipment_list_data = shipmentDetails;
+
+        let email = "mahiman@gmail.com"
+        let [name, domain]= email.split('@');
+        let [domainName, dominaEnd] = domain.split('.');
+
+        const makedName =  this.replacename(name,true);
+        const makedDomain = this.replacename(domainName,false)
+        console.log(shipmentDetails);
+
+        const maskedEmail = `${makedName}@${makedDomain}.${dominaEnd}`
+        console.log(maskedEmail)
+      },
+      error => {
+        console.error('Error fetching shipment details:', error);
+      }
+    );
   }
+
+  replacename(name:any,first:boolean){
+    let maskName:any= "";
+    if(first){
+      maskName[0] = name[0]
+      for(let i=1; i<name.length; i++){
+        maskName += "*"
+      }
+    }{
+      for(let i=1; i<name.length; i++){
+        maskName += "*"
+      }
+    }
+    return maskName
+  }
+
   toggleInfo(): void {
     this.showInfo = !this.showInfo;
   }
