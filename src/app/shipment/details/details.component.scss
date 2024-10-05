@@ -28,6 +28,7 @@ $breakpoint-desktop: 1023px;
     p {
       font-size: 1rem;
       color: #555;
+      margin: 0;
   
       @media (max-width: $breakpoint-mobile) {
         font-size: 0.9rem;
@@ -172,5 +173,11 @@ $breakpoint-desktop: 1023px;
       grid-template-columns: 1fr;
     }
   }
-  
+ img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    max-width: 100px;
+    float: left;
+  }
   

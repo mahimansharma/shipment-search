@@ -1,13 +1,13 @@
 <div class="container results-container">
   <div class="result-topbar">
-    <a class="navbar-brand" href="/">
-      <img style="width: 30px;" [src]='"/assets/img/back.svg"' alt="dsadsa" />
+    <a style="border-right: 1px solid black;" href="/">
+      <img class="pt-1" style="width: 30px;" [src]='"/assets/img/back.svg"' alt="dsadsa" />
     </a>
-    <h2 style="display: inline-block; margin-left: 20px;" >{{ 'shipment.RESULTS_TITLE' | translate }}</h2>
+    <h2 class="result-title" >{{ 'shipment.RESULTS_TITLE' | translate }}</h2>
 
   </div>
 
-  <div *ngIf="filteredShipments.length > 0" style="display: flow-root; margin-left: 1%;">
+  <div *ngIf="filteredShipments.length > 0" class="sub-row" >
     <div> <span style="font-size: 30px;">{{totalResults}} </span> results</div>
     <div class="filter-icon-container">
       <div class="filter-icon" (click)="toggleFilterPopover()">
@@ -37,24 +37,23 @@
   </div>
 
    <div>
-     <div *ngFor="let shipment of filteredShipments" class="shipment-item" >
-       <div class="details-grid">
-         <div class="details-column">
+     <div *ngFor="let shipment of filteredShipments">
+       <div class="row border-bottom mt-3 p-3 result-row">
+         <div class="col-xl-4 col-6">
            <p>{{ shipment.OrderNo }}</p>
            <p>{{ shipment.ShipmentLines.TotalNumberOfRecords }} products</p>
            <p><strong>Carrier:</strong> {{ shipment.ScacAndService }}</p>
            <p  class="clickable" (click)="viewDetails(shipment.ShipmentNo)"><strong>Shipment #:</strong> <span>{{ shipment.ShipmentNo }}</span> </p>
          </div>
          
-         <div class="details-column">
+         <div class="col-xl-4 col-6">
            <p class="status">{{ shipment.Status }}</p>
            <p><strong>Assigned to:</strong> {{ shipment.AssignedToUserId }}</p>
            <p><strong>{{ shipment.DeliveryMethod == "SHP" ? "Expected Shipment date" : "Expected Pickup date"}}</strong> {{parseDate(shipment.ExpectedShipmentDate) || shipment.ExpectedShipmentDate}}</p>
          </div>
          
-         <div class="details-column">
+         <div class="col-xl-4 col-12">
            <p><strong> Customer Info:</strong></p>
-           <br>
            <p>{{ shipment.BillToAddress.FirstName }} {{ shipment.BillToAddress.LastName }}</p>
            <p> {{ shipment.BillToAddress.DayPhone }}</p>
            <p>{{ shipment.BillToAddress.EMailID }}</p>

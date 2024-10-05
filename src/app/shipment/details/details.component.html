@@ -13,22 +13,20 @@
     <div class="no-shipment" *ngIf="!(shipment && shipment_list_data)" >{{ 'shipment_details.NO_RESULT' | translate }} {{shipmentNo}}</div>
 
     <div *ngIf="(shipment && shipment_list_data)">
-      <div class="details-grid">
-        <div class="details-column">
+      <div class="row mt-3 p-4" style="background-color: rgb(193, 193, 193);">
+        <div class="col-xl-4 col-6">
           <p class="status" style="color: purple;" >{{ shipment.Status }}</p>
           <p  class="clickable"><strong>Shipment #:</strong> <span>{{ shipment.ShipmentNo }}</span> </p>
-  
+
           <span *ngIf="showInfo">
             <p><strong>{{ 'shipment_details.CARRIER' | translate }}</strong> {{ shipment_list_data.ScacAndService }}</p>
             <p><strong>{{ 'shipment_details.ASSIGNED_TO' | translate }}</strong> {{ shipment_list_data.AssignedToUserId }}</p>
           </span>
         </div>
-        <div class="details-column">
+        <div class="col-xl-4 col-6">
           <p><strong>{{ shipment.DeliveryMethod == "SHP" ? "Expected Shipment date" : "Expected Pickup date"}}</strong>  {{parseDate(shipment.ExpectedShipmentDate) || shipment.ExpectedShipmentDate}}</p>
-          
           <span *ngIf="showInfo">
             <p><strong>{{ 'shipment_details.CUSTOMER_INFO' | translate }}</strong></p>
-            <br>
             <p>{{ shipment_list_data.BillToAddress.FirstName }} {{ shipment_list_data.BillToAddress.LastName }}</p>
             <p> {{ shipment_list_data.BillToAddress.DayPhone }}</p>
             <p>{{ shipment_list_data.BillToAddress.EMailID }}</p>
@@ -36,20 +34,16 @@
         </div>
         
         <!-- Third Column (moves under first column on mobile) -->
-        <div class="details-column">
+        <div class="col-xl-4 col-12">
           <p><strong>{{ 'shipment_details.SHIP_TO' | translate }}</strong></p>
-          <br>
           <p>{{ shipment.ToAddress.FirstName }} {{ shipment.ToAddress.LastName }}</p>
           <p>{{shipment.ToAddress.AddressLine1}} {{shipment.ToAddress.AddressLine2}} {{shipment.ToAddress.City}} {{shipment.ToAddress.State}} {{shipment.ToAddress.Country}} {{shipment.ToAddress.ZipCode}} </p>
          
           <span *ngIf="showInfo">
             <p><strong>{{ 'shipment_details.BILL_TO' | translate }}</strong></p>
-            <br>
             <p>{{ shipment.BillToAddress.FirstName }} {{ shipment.BillToAddress.LastName }}</p>
             <p>{{shipment.BillToAddress.AddressLine1}} {{shipment.BillToAddress.AddressLine2}} {{shipment.BillToAddress.City}} {{shipment.BillToAddress.State}} {{shipment.BillToAddress.Country}} {{shipment.BillToAddress.ZipCode}} </p>
-           
           </span>
-  
         </div>
       </div>
       <div (click)="toggleInfo()" class="toggle-btn">
@@ -59,8 +53,8 @@
        <div class="container">
          <div>{{ 'shipment_details.PRODUCTS' | translate }}({{shipment?.ShipmentLines?.TotalNumberOfRecords}})</div>
      
-         <div class="products-grid">
-           <div class="product-card" *ngFor="let product of shipment?.ShipmentLines?.ShipmentLine">
+         <div class="row">
+           <div class="product-card col-12 col-xl-6" *ngFor="let product of shipment?.ShipmentLines?.ShipmentLine">
              <img class="productImg" [src]="product.OrderLine.ItemDetails.ImageUrl" alt="{{ product.OrderLine.ItemDetails.Description }}" />
              <div class="product-details">
                <strong>{{ product.OrderLine.ItemDetails.Description }}</strong>

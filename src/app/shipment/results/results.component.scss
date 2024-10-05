@@ -55,12 +55,15 @@ $breakpoint-desktop: 1023px;
 
   //////////////////////////////
 
+  .sub-row{
+    display: flex;
+    justify-content: space-between;
+  }
+
   .filter-icon-container {
-    position: relative; /* Fix the position to keep it floating */
-    top: -30px; /* You can adjust this depending on your layout */
-    right: 20px; /* Ensure it's on the right */
+    align-self: flex-end;
     z-index: 1000;
-    float: right;
+    position: relative;
   }
   
   // Styling for the filter icon
@@ -80,8 +83,12 @@ $breakpoint-desktop: 1023px;
       color: #007bff;
     }
   }
+  .result-row{
+    &:hover {
+      background-color: lightgrey;
+    }
+  }
   
-  // Filter popover styling (relative to filter icon)
   .filter-popover {
     position: absolute;
     top: 50px; /* Adjust so it appears right under the filter icon */
@@ -204,6 +211,11 @@ $breakpoint-desktop: 1023px;
 
 .result-topbar{
   border-bottom: 1px solid black;
+  display: flex;
+}
+
+.result-title{
+  margin-left: 1rem;
 }
 
 // Mobile reflow for third column under first column
